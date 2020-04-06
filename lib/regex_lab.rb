@@ -23,5 +23,7 @@ def first_word_capitalized_and_ends_with_punctuation?(text)
 end
 
 def valid_phone_number?(phone)
-
+  phone.map do |number|
+    number.split(/\W/).join("").match?(/[0-9]{10}/)
+  end
 end
